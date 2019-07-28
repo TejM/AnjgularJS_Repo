@@ -33,16 +33,15 @@
       { name: 'Bananas', quantity: 100 },
       { name: 'Toys', quantity: 6 },
       { name: 'Dildos', quantity: 300 },
-      { name: 'Yaakovs', quantity: 1 },
-      { name: 'Candy', quantity: 1 }
+      { name: 'Yaakovs', quantity: 1 }
     ];
 
     var list2 = [];
 
     service.transfer = function(itemIndex) {
-      list2 = list2.concat(list1.splice(itemIndex, 1));
-      console.log(list1);
-      console.log(list2);
+      list2.push(list1.splice(itemIndex, 1)[0]);
+      console.log('List 1', list1);
+      console.log('List 2', list2);
     };
 
     service.getList = function(num) {
